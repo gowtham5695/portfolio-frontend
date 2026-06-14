@@ -125,19 +125,25 @@ const SkillsManagement = () => {
 
           <div className="space-y-1.5">
             <label className="text-xs text-gray-300 font-semibold">Category</label>
-            <select
+            <input
+              type="text"
               name="category"
+              list="skill-categories"
+              required
               value={formData.category}
               onChange={handleChange}
-              className="w-full glass-input p-2.5 text-xs bg-[#0b0920]"
-            >
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
-              <option value="Database">Database</option>
-              <option value="DevOps">DevOps</option>
-              <option value="Languages">Languages</option>
-              <option value="Other">Other Area</option>
-            </select>
+              className="w-full glass-input p-2.5 text-xs"
+              placeholder="e.g. Frontend, Machine Learning"
+            />
+            <datalist id="skill-categories">
+              <option value="Frontend" />
+              <option value="Backend" />
+              <option value="Database" />
+              <option value="DevOps" />
+              <option value="Languages" />
+              <option value="Machine Learning" />
+              <option value="Data Science" />
+            </datalist>
           </div>
 
           <div className="space-y-1.5">
