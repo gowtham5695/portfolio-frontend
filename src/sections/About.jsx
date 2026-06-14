@@ -37,8 +37,8 @@ const About = ({ profile, skillsCount = 0, projectsCount = 0, experienceCount = 
                 <BookOpen size={24} />
               </div>
               <div>
-                <h4 className="text-white font-semibold mb-1">Constant Learning</h4>
-                <p className="text-gray-400 text-sm">I'm continuously refining my knowledge of algorithms, systems architecture, and UI/UX design trends to deliver top-notch products.</p>
+                <h4 className="text-white font-semibold mb-1">{profile?.about_card_title || "Constant Learning"}</h4>
+                <p className="text-gray-400 text-sm">{profile?.about_card_desc || "I'm continuously refining my knowledge of algorithms, systems architecture, and UI/UX design trends to deliver top-notch products."}</p>
               </div>
             </div>
           </motion.div>

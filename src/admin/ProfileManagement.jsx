@@ -14,6 +14,8 @@ const ProfileManagement = () => {
     availability_status: '',
     about_title: '',
     about_bio: '',
+    about_card_title: '',
+    about_card_desc: '',
     footer_text: '',
     social_links: {
       github: '',
@@ -379,6 +381,32 @@ const ProfileManagement = () => {
               onChange={handleProfileChange}
               className="w-full glass-input p-3 text-sm resize-none"
             ></textarea>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-sm text-gray-300 font-medium">About Highlight Card Title</label>
+              <input
+                type="text"
+                name="about_card_title"
+                value={profileData.about_card_title || ''}
+                onChange={handleProfileChange}
+                className="w-full glass-input p-3 text-sm"
+                placeholder="e.g. Constant Learning"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-sm text-gray-300 font-medium">About Highlight Card Description</label>
+              <textarea
+                name="about_card_desc"
+                rows="2"
+                value={profileData.about_card_desc || ''}
+                onChange={handleProfileChange}
+                className="w-full glass-input p-3 text-sm resize-none"
+                placeholder="Describe your learning focus..."
+              ></textarea>
+            </div>
           </div>
 
           <button
