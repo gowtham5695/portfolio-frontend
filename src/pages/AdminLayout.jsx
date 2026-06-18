@@ -4,7 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import { 
   LayoutDashboard, User, Code2, FolderGit2, GraduationCap, 
   Briefcase, Award, Mail, LogOut, Menu, X, ArrowLeft, Loader2,
-  Layers
+  Layers, ClipboardList
 } from 'lucide-react';
 
 const AdminLayout = () => {
@@ -35,6 +35,7 @@ const AdminLayout = () => {
     { name: 'Certifications', path: 'certifications', icon: <Award size={18} /> },
     { name: 'Experience', path: 'experience', icon: <Briefcase size={18} /> },
     { name: 'Custom Sections', path: 'sections', icon: <Layers size={18} /> },
+    { name: 'Job Tracker', path: 'tracker', icon: <ClipboardList size={18} /> },
     { name: 'Messages Inbox', path: 'messages', icon: <Mail size={18} /> },
   ];
 

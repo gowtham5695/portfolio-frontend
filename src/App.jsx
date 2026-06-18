@@ -19,6 +19,7 @@ import CertificationsManagement from './admin/CertificationsManagement';
 import ExperienceManagement from './admin/ExperienceManagement';
 import MessagesManagement from './admin/MessagesManagement';
 import CustomSectionsManagement from './admin/CustomSectionsManagement';
+import JobTrackerManagement from './admin/JobTrackerManagement';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="experience" element={<ExperienceManagement />} />
             <Route path="messages" element={<MessagesManagement />} />
             <Route path="sections" element={<CustomSectionsManagement />} />
+            <Route path="tracker" element={<JobTrackerManagement />} />
           </Route>
 
           {/* Wildcard Fallback redirection */}

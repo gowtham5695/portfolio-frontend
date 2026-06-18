@@ -132,6 +132,24 @@ const portfolioService = {
     const response = await api.delete(`/custom-sections/${id}`);
     return response.data;
   },
+
+  // Job Applications
+  getJobApplications: async () => {
+    const response = await api.get('/job-applications');
+    return response.data;
+  },
+  addJobApplication: async (appData) => {
+    const response = await api.post('/job-applications', appData);
+    return response.data;
+  },
+  updateJobApplication: async (id, appData) => {
+    const response = await api.put(`/job-applications/${id}`, appData);
+    return response.data;
+  },
+  deleteJobApplication: async (id) => {
+    const response = await api.delete(`/job-applications/${id}`);
+    return response.data;
+  },
 };
 
 export default portfolioService;
