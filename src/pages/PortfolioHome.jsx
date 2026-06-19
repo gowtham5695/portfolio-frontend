@@ -25,8 +25,14 @@ const PortfolioHome = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [loadingMessage, setLoadingMessage] = useState("Loading portfolio assets...");
 
   useEffect(() => {
+    // Show a helpful tip if the backend takes longer than 3.5 seconds to respond (common for free-tier Render cold starts)
+    const messageTimer = setTimeout(() => {
+      setLoadingMessage("Waking up the free-tier backend server. This cold start takes about 50 seconds. Thank you for your patience! ☕");
+    }, 3500);
+
     const fetchAllData = async () => {
       try {
         const [profile, skills, projects, education, certifications, experience, customSections] = await Promise.all([
@@ -57,13 +63,15 @@ const PortfolioHome = () => {
     };
 
     fetchAllData();
+
+    return () => clearTimeout(messageTimer);
   }, []);
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#030014] flex flex-col items-center justify-center text-white">
+      <div className="min-h-screen bg-[#030014] flex flex-col items-center justify-center text-white p-6 text-center">
         <Loader2 className="animate-spin text-violet-500 mb-4" size={40} />
-        <p className="text-gray-400 text-sm font-medium tracking-wide">Loading portfolio assets...</p>
+        <p className="text-gray-400 text-sm font-medium tracking-wide max-w-sm leading-relaxed">{loadingMessage}</p>
       </div>
     );
   }
